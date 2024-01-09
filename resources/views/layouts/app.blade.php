@@ -43,7 +43,7 @@
                         </ul>
     
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto ">
+                        <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
                             @guest
                             <li class="nav-item">
@@ -57,6 +57,7 @@
                             @else
                             <li class="nav-item dropdown d-flex align-items-center">
                                 <a class="nav-link color-light-grey" href="{{route('admin.projects.index')}}"><b>Progetti</b></a>
+                                <a class="nav-link color-light-grey" href="{{route('admin.project_types.index')}}"><b>Gestione Tipo di Progetto</b></a>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle color-light-grey" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    <b>{{ Auth::user()->name }}</b> 
                                 </a>

@@ -11,10 +11,11 @@
 
             <p class="text-light pb-5">{{$project->description}}</p>
 
-            <div class="d-flex align-items-center gap-3 pb-3">
+            <div class="d-flex align-items-center gap-3 pb-3 justify-content-between">
+              <div>
                 <a class="btn modify-button-bg text-light btn-sm" href="{{route('admin.projects.edit', $project->id)}}">Modifica</a>
-            <div class="index" id="modal-delete-{{ $project->id }}">
-                <div class="delete-notification py-3 px-4">
+                <div class="index" id="modal-delete-{{ $project->id }}">
+                  <div class="delete-notification py-3 px-4">
                     <p class="mb-5 border-bottom text-light"><b>Sei sicuro di voler eliminare questo elemento?</b></p>
                     <div class="d-flex justify-content-around">
                       <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
@@ -31,7 +32,12 @@
                 </div>
               </div>
             
-            <span class="btn btn-danger btn-sm" onclick="deleteNotification('{{ $project->id }}')">Elimina</span>
+              <span class="btn btn-danger btn-sm" onclick="deleteNotification('{{ $project->id }}')">Elimina</span>
+            </div>
+            <div>
+              <a class="btn btn-dark
+               btn-sm text-light" href="{{route('admin.projects.index')}}">Torna ai Progetti</a>
+            </div>
             </div>
 
         </div>
