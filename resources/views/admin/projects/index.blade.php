@@ -14,6 +14,7 @@
                       <th class="py-4">Titolo</th>
                       <th class="py-4">Url immagine</th>
                       <th class="py-4">Slug</th>
+                      <th class="py-4">Tipo di progetto</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -26,6 +27,9 @@
                           </td>
                           <td class="py-3"><span class="text-white-50">{{ $project->thumb }}</span></td>
                           <td class="py-3"><span class="text-white-50">{{ $project->slug }}</span></td>
+                          <td class="py-3"><span class="text-white-50">
+                            {{isset($project->type) ? $project->type->name : '-'}}</span>
+                          </td>
                           <td>
                             <div class="d-flex gap-3 py-3">
   
@@ -57,7 +61,7 @@
                         </tr>
                     @empty
                         <tr>
-                          <td colspan="4">
+                          <td colspan="6">
                             Nessun progetto trovato
                           </td>
                         </tr>

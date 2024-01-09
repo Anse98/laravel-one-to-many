@@ -3,7 +3,12 @@
 @section('content')
     <section>
         <div class="container py-5">
-            <h1 class="color-red pb-5"> {{$project->title}}</h1>
+            <h1 class="color-red pb-2"> {{$project->title}}</h1>
+
+            @if($project->type)
+            <h3 class="badge border mb-5">{{ $project->type->name }}</h3>
+            @endif
+
             <p class="text-light pb-5">{{$project->description}}</p>
 
             <div class="d-flex align-items-center gap-3 pb-3">
@@ -28,7 +33,10 @@
             
             <span class="btn btn-danger btn-sm" onclick="deleteNotification('{{ $project->id }}')">Elimina</span>
             </div>
+
         </div>
+
+       
     </section>
 
     <script>

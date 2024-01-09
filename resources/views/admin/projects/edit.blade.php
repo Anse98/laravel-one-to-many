@@ -29,6 +29,16 @@
                     <input type="text" readonly class="form-control text-bg-dark" name="slug" id="slug" placeholder="Slug" value="{{old('slug', $project->slug)}}">
                 </div>
 
+                <div class="mb-3">
+                    <label for="type" class="form-label color-grey">Tipo di Progetto</label>
+                    <select name="type_id" id="type_id" class="form-control text-bg-dark">
+                        <option value="">Scegli il tipo di progetto</option>
+                        @foreach ($types as $type)
+                            <option @selected( old('type_id', optional($project->type)->id ) == $type->id) value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div class="pt-5">
                     <input type="submit" class="btn main-button-background text-light" value="Conferma modifiche">
                 </div>

@@ -23,6 +23,16 @@
                     <textarea class="form-control text-bg-dark" name="description" id="description" rows="4" placeholder="Descrizione del progetto">{{old('description')}}</textarea>
                 </div>
 
+                <div class="mb-3">
+                    <label for="type" class="form-label color-grey">Tipo di Progetto</label>
+                    <select name="type_id" id="type_id" class="form-control text-bg-dark">
+                        <option value="">Scegli il tipo di progetto</option>
+                        @foreach ($types as $type)
+                            <option @selected( old('type_id') == $type->id ) value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div>
                     <input type="submit" class="btn main-button-background text-light btn-sm p-2" value="Aggiungi">
                 </div>
